@@ -59,8 +59,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 echo '<h1>Welcome to Easy Task Managment</h1>';
 //Different kinds of quotation styles can be used, but the closing quote must match the opening quote
 echo "<p>For both your avid schedulers and your hasty procrastinators</br> </p>";
-echo "Hello! Today is " . date("Y/m/d") . "<br>";
-echo "The time is " . date("h:i:sa");
 ?>
     <style type="text/css">
         body{ font: 14px sans-serif; text-align: center; }

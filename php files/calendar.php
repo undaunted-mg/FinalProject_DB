@@ -1,3 +1,12 @@
+<?php
+if(!isset($_SESSION['userId']))
+{
+    // not logged in
+    header('Location: login.php');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +42,7 @@
               <a class="nav-link" href="calendar.php">My Calendar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Register</a>
+              <a class="nav-link" href="register.php">Register</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="logout.php">Sign Out</a>
@@ -162,9 +171,9 @@ echo "Hello! Today is " . date("Y/m/d") . "<br>";
       <h3>To Do List's</h3>
       <div id="to-do-list"></div>
       <form method=”post” action=”create.php”>
-        <p>Todo title: </p>
+        <p>To do title: </p>
         <input name=”todoTitle” type=”text”>
-        <p>Todo description: </p>
+        <p>To do description: </p>
         <input name=”todoDescription” type=”text”>
       </br>
       <input type=”submit” name=”submit” value=”submit”>
