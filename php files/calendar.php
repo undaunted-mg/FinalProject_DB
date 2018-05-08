@@ -1,10 +1,10 @@
 <?php
-if(!isset($_SESSION['userId']))
+/*if(!isset($_SESSION['userId']))
 {
     // not logged in
     header('Location: login.php');
     exit();
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -165,7 +165,6 @@ echo "Hello! Today is " . date("Y/m/d") . "<br>";
 <div class="container-fluid">
   <div class="row text-center">
     <!--div that holds two columns for to-do-list and contact-list-->
-    <div class="col-md-6 col-lg-12 col-xl-12">
       <h3>Other Tools</h3>
     <div class="col-md-3 col-lg-6 col-xl-6">
       <h3>To Do List's</h3>
@@ -178,6 +177,7 @@ echo "Hello! Today is " . date("Y/m/d") . "<br>";
       </br>
       <input type=”submit” name=”submit” value=”submit”>
     </form>
+    </div>
       <div class="col-md-3 col-lg-6 col-xl-6">
         <h3>Contact List</h3>
         <form method=”post” action=”create.php”>

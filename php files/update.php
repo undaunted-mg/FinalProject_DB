@@ -10,11 +10,10 @@ if (!$db_server) die("Unable to connect to MySQL: " . mysqli_error($db_server));
 
 if(isset($_POST["id"]))
 {
- $query = "
- UPDATE events
+ $query =
+ "UPDATE events
  SET title=:title, start_event=:start_event, end_event=:end_event
- WHERE id=:id
- ";
+ WHERE id=:id";
  $statement = $connect->prepare($query);
  $statement->execute(
   array(
@@ -25,5 +24,4 @@ if(isset($_POST["id"]))
   )
  );
 }
-
 ?>
