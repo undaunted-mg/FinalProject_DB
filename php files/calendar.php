@@ -27,16 +27,16 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
+              <a class="nav-link active" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">My Calendar</a>
+              <a class="nav-link" href="calendar.php">My Calendar</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign Out</a>
+              <a class="nav-link" href="logout.php">Sign Out</a>
             </li>
           </ul>
         </div>
@@ -152,18 +152,36 @@ echo "Hello! Today is " . date("Y/m/d") . "<br>";
   <div class="container">
     <div id="calendar"></div>
   </div>
-  </br>
-  <div class="container">
-    <h1>To Do List's</h1>
-    <div id="to-do-list"></div>
-    <form method=”post” action=”create.php”>
-      <p>Todo title: </p>
-      <input name=”todoTitle” type=”text”>
-      <p>Todo description: </p>
-      <input name=”todoDescription” type=”text”>
-    </br>
+</br>
+<div class="container-fluid">
+  <div class="row text-center">
+    <!--div that holds two columns for to-do-list and contact-list-->
+    <div class="col-md-6 col-lg-12 col-xl-12">
+      <h3>Other Tools</h3>
+    <div class="col-md-3 col-lg-6 col-xl-6">
+      <h3>To Do List's</h3>
+      <div id="to-do-list"></div>
+      <form method=”post” action=”create.php”>
+        <p>Todo title: </p>
+        <input name=”todoTitle” type=”text”>
+        <p>Todo description: </p>
+        <input name=”todoDescription” type=”text”>
+      </br>
       <input type=”submit” name=”submit” value=”submit”>
     </form>
+      <div class="col-md-3 col-lg-6 col-xl-6">
+        <h3>Contact List</h3>
+        <form method=”post” action=”create.php”>
+          <p>Contact Name: </p>
+          <input name=”contactTitle” type=”text”>
+          <p>Contact Info: </p>
+          <input name=”contactInfo” type=”text”>
+        </br>
+        <input type=”submit” name=”submit” value=”submit”>
+      </form>
+    </div> <!-- end of row text-center div-->
   </div>
+  </div> <!-- end of row text-center div-->
+</div><!-- end of container-fluid div-->
 </body>
 </html>
