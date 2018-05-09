@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Easy Task Management</title>
+<title>I think I sharted </title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -87,10 +87,10 @@ echo "Hello! Today is " . date("Y/m/d") . "<br>";
        url:"insert.php",
        type:"POST",
        data:{title:title, start:start, end:end},
-       success:function()
+       success:function(msg)
        {
         calendar.fullCalendar('refetchEvents');
-        alert("Added Successfully");
+        alert("Added Successfully" + msg);
        }
       })
      }
