@@ -2,6 +2,8 @@
 
 //delete.php
 
+include "login_maryann.php";
+
 if(isset($_POST["id"]))
 {
 //$connect = new PDO('mysql:host=localhost;dbname=testing', 'root', '');
@@ -11,8 +13,7 @@ if(isset($_POST["id"]))
  if (!$db_server) die("Unable to connect to MySQL: " . mysqli_error($db_server));
 
  $query = "
- DELETE from events WHERE id=:id
- ";
+ DELETE from events WHERE id=:id";
  $statement = $connect->prepare($query);
  $statement->execute(
   array(
