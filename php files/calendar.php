@@ -6,15 +6,10 @@ header('Location: login.php');
 exit();
 }*/
 
-
 date_default_timezone_set('US/Eastern');
-
 include_once "header.php";
-
 ?>
-
-
-  <?php
+ <?php
   //index.php
   //welcome scripts
   //HTML can be output inside of PHP tags using echo
@@ -23,14 +18,47 @@ include_once "header.php";
   echo "<p>For both your avid schedulers and your hasty procrastinators</br> </p>";
   echo "Hello! Today is " . date("Y/m/d") . "<br>";
   ?>
-  <!-- javascript section for calendar functions-->
-
 <style>
-    <?php
     include_once 'user.css';
-    ?>
 </style>
+
+<!-- javascript section for calendar functions-->
+
+<head>
+    <title>Easy Task Management </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
   <script>
+
+      <?php
+
+            include "login_maryann.php";
+            $userID = 1; //TODO
+
+                $db_server = mysqli_connect($db_hostname, $db_username, $db_password, $db_database);
+      if (!$db_server) die("Unable to connect to MySQL: " . mysqli_error($db_server));
+
+      $events_array = array();
+              $query = "SELECT * FROM events"; //TODO: where user_id=...
+
+              $result = mysqli_query($db_server,$query);
+//                $statement = $db_server->prepare($query);
+//                $result = $statement->execute();
+
+              while($line = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+                  $e = array();
+                  $e['id'] = $line['id'];
+                  $e['start'] = $line['start_event'];
+                  $e['end'] = $line['end_event'];
+                  array_push($events_array,$e);
+              }
+//              print_r($events_array);
+
+      ?>
+      var events = <?php echo json_encode($events_array);?>;
+
   $(document).ready(function() {
     var calendar = $('#calendar').fullCalendar({
       editable:true,
@@ -55,10 +83,13 @@ include_once "header.php";
             data:{title:title, start:start, end:end},
             success:function(msg)
             {
+                calendar.fullCalendar('renderEvent',{title:title, start:start, end:end},true);
               calendar.fullCalendar('refetchEvents');
               alert("Added Successfully " + msg);
             }
           })
+            
+
         }
       },
       editable:true,
@@ -73,6 +104,7 @@ include_once "header.php";
           type:"POST",
           data:{title:title, start:start, end:end, id:id},
           success:function(){
+              alert(JSON.stringify({title:title, start:start, end:end, id:id}));
             calendar.fullCalendar('refetchEvents');
             alert('Event Update');
           }
@@ -102,12 +134,14 @@ include_once "header.php";
         if(confirm("Are you sure you want to remove it?"))
         {
           var id = event.id;
+
           $.ajax({
             url:"delete.php",
             type:"POST",
             data:{id:id},
             success:function()
             {
+                calendar.fullCalendar('removeEvents',[id]);
               calendar.fullCalendar('refetchEvents');
               alert("Event Removed");
             }
@@ -116,6 +150,7 @@ include_once "header.php";
       },
 
     });
+    calendar.fullCalendar('addEventSource',events);
   });
 
   </script>

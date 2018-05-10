@@ -10,24 +10,25 @@ include "login_maryann.php";
 $db_server = mysqli_connect($db_hostname, $db_username, $db_password, $db_database);
 if (!$db_server) die("Unable to connect to MySQL: " . mysqli_error($db_server));
 
-if(isset($_POST["title"]))
+if(isset($POST["title"]))
 {
-    $title = $_POST['title'];
-    $start_event = $_POST['start'];
-    $end_event = $_POST['end'];
+    $title = $POST['title'];
+    $start_event = $POST['start'];
+    $end_event = $POST['end'];
 
- $query = "
+ $query = /** @lang text */
+     "
  INSERT INTO events
  (title, start_event, end_event)
  VALUES ('$title', '$start_event', '$end_event')
  ";
  $statement = $db_server->prepare($query);
  $statement->execute(
-//  array(
-//   ':title'  => $_POST['title'],
-//   ':start_event' => $_POST['start'],
-//   ':end_event' => $_POST['end']
-//  )
+//  [
+//   ':title'  => $POST['title'],
+//   ':start_event' => $POST['start'],
+//   ':end_event' => $POST['end']
+//  ]
  );
 }
 

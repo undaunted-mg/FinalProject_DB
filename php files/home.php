@@ -11,47 +11,30 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 <!DOCTYPE html>
 <html>
 <head>
-<title>Easy Task Management</title>
+<title>Easy Task Management Home Page</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</head>
-<body>
-<!-- nav bar section-->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark"> <!-- put navbar and brand outside div to solve navbar width issue -->
-  <a class="navbar-brand" href="#">🗓</a>
-  <div class="container-fluid"><!-- navbar div -->
-    <div class="row">
-      <div class="col-md-12 col-lg-12 col-xl-12">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">My Calendar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Sign Out</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div> <!-- end of navbar div-->
 </nav>
+<?php
 
+include "login_maryann.php";
+
+$db_server = mysqli_connect($db_hostname, $db_username, $db_password, $db_database);
+if (!$db_server) die("Unable to connect to MySQL: " . mysqli_error($db_server));
+?>
+<?php
+/*if(!isset($_SESSION['userId']))
+{
+// not logged in
+header('Location: login.php');
+exit();
+}*/
+
+
+date_default_timezone_set('US/Eastern');
+
+include_once "header.php";
+
+?>
 <?php
 //index.php
 //welcome scripts

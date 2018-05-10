@@ -10,20 +10,31 @@ include "login_maryann.php";
 $db_server = mysqli_connect($db_hostname, $db_username, $db_password, $db_database);
 if (!$db_server) die("Unable to connect to MySQL: " . mysqli_error($db_server));
 
-if(isset($_POST["id"]))
+//if(isset($_POST["id"]))
+$id = $_POST['id'];
+    if(isset($_POST["id"]))
+
 {
+
+    $start_event = $_POST['start'];
+    $end_event = $_POST['end'];
+    $id = $_POST['id'];
+    $title = $_POST['title'];
+
  $query =
  "UPDATE events
- SET title=:title, start_event=:start_event, end_event=:end_event
- WHERE id=:id";
- $statement = $connect->prepare($query);
+ SET title='$title', start_event='$start_event', end_event='$end_event'
+ WHERE id=$id";
+ $statement = $db_server->prepare($query);
  $statement->execute(
-  array(
-   ':title'  => $_POST['title'],
-   ':start_event' => $_POST['start'],
-   ':end_event' => $_POST['end'],
-   ':id'   => $_POST['id']
-  )
+
+//array doesn't work comment out
+//  array(
+//   ':title'  => $_POST['title'],
+//   ':start_event' => $_POST['start'],
+//   ':end_event' => $_POST['end'],
+//   ':id'   => $_POST['id']
+//  )
  );
 }
 ?>

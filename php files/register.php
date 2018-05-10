@@ -1,6 +1,7 @@
 <?php
 // Include config file
-require_once 'config.php';
+require_once 'login_maryann.php';
+include_once "header.php";
  
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -98,7 +99,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; }

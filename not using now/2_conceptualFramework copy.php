@@ -6,6 +6,30 @@
     </style>
   </head>
   <body>
+
+  <?php
+  /*if(!isset($_SESSION['userId']))
+  {
+  // not logged in
+  header('Location: login.php');
+  exit();
+  }*/
+
+  date_default_timezone_set('US/Eastern');
+  include_once "header.php";
+  ?>
+  <style>
+      include_once 'user.css';
+  </style>
+  <?php
+  //index.php
+  //welcome scripts
+  //HTML can be output inside of PHP tags using echo
+  echo '<h1>Welcome to Easy Task Management</h1>';
+  //Different kinds of quotation styles can be used, but the closing quote must match the opening quote
+  echo "<p>For both your avid schedulers and your hasty procrastinators</br> </p>";
+  echo "Hello! Today is " . date("Y/m/d") . "<br>";
+  ?>
   
 <!-- README: -->
 <!-- This file has a .PHP extension. This means that the server will process PHP code in addition to outputting HTML. -->
