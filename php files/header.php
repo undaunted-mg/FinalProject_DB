@@ -24,16 +24,10 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.php">Home</a>
+                            <a class="nav-link active" href="calendar.php">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="calendar.php">My Calendar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="register.php">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="logout.php">Sign Out</a>
                         </li>
                     </ul>
                 </div>

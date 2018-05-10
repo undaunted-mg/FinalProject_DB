@@ -1,5 +1,10 @@
 <?php
-session_start();
+//sql permissions
+
+require_once 'login_maryann.php';
+?>
+
+<?php
 
 if (!isset($_SESSION['username'])) {
     $_SESSION['msg'] = "You must log in first";

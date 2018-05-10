@@ -4,17 +4,49 @@ html {
 }
 
 body {
+  background-color: #eceff0;
   height: 980px;
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
+input{
+  font:1em "Open Sans", sans-serif;
+  color:#363639;
+}
+
+a{
+  text-decoration: none;
+  border-bottom: 1px dashed #363639;
+}
+
+.list{
+  background-color:#fff;
+  margin:20px auto;
+  width: 100%;
+  max-width:500px;
+  padding: 2px;
+  border-radius: 2px;
+  box-shadow: 3px 3px 0 rbga (0,0,0,.1);
+  box-sizing: border-box;
+}
 header {
   width: 980px;
   height: 40px;
   margin: 1px 1px 10px 1px;
   padding: 0;
+}
+.list .header{
+  font-family: "Shadows Into Light Two", cursive;
+  margin: 0 0 0 0;
+}
+
+.items{
+  margin:0;
+  padding:0;
+  list-style: none;
+
 }
 
 h1 {
