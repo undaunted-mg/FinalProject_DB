@@ -1,22 +1,17 @@
 <?php
-/*if(!isset($_SESSION['userId']))
-{
-// not logged in
-header('Location: login.php');
-exit();
-}*/
 date_default_timezone_set('US/Eastern');
 include_once "header.php";
 ?>
-<?php
-//index.php
-//welcome scripts
-//HTML can be output inside of PHP tags using echo
-echo '<h1>Welcome to Easy Task Management</h1>';
-//Different kinds of quotation styles can be used, but the closing quote must match the opening quote
-echo "<p>For both your avid schedulers and your hasty procrastinators</br> </p>";
-echo "Hello! Today is " . date("Y/m/d") . "<br>";
-?>
+<div class="container">
+    <div class="row">
+        <?php
+        //welcome scripts
+        echo '<h1>Welcome to Easy Task Management</h1>';
+        echo '<div class="container">';
+        echo "For both your avid schedulers and your hasty procrastinators" . "<br>";
+        echo "Hello! Today is " . date("Y/m/d") . "<br>";
+        echo '</div>';
+        ?>
 <style>
     include_once 'user.css';
 </style>
@@ -24,9 +19,6 @@ echo "Hello! Today is " . date("Y/m/d") . "<br>";
 <head>
     <title>Easy Task Management </title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
     <script>
         <?php
         include "login_maryann.php";
@@ -146,6 +138,37 @@ echo "Hello! Today is " . date("Y/m/d") . "<br>";
     <div id="calendar"></div>
 </div>
 </br>
+<div class="container-fluid">
+    <div class="row">
+        <!--div that holds two columns for to-do-list and contact-list-->
+        <div class="col-sm">
+            <div class="list">
+                <h3>To Do List's</h3>
+                <ul class="items">
+                    <li><span class="item">Shopping</span>
+                    </li>
+                    <li><span= class"item done">item done</span>
+                        <a href="#">Mark as done</a>
+                    </li>
+                </ul>
+                <form class "item-add" action="add.php" method="post">
+                <input type="text" name="name" placeholder="Type a new item here" class="input" autocomplete="off" required>
+                <input type="submit" value="Add" class="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--        <div class="col-sm">-->
+    <!--            <div id="contact_List">-->
+    <!--                <h3>Contact List</h3>-->
+    <!--                <form method="post" action="create_contact.php" class="contact_form">-->
+    <!--                    <input type="text" name="Contact" class="contact_input">-->
+    <!--                    <button type="submit" name="submit" id="add_btn" class="add_btn">Add Contact</button>-->
+    <!--                </form>-->
+    <!--            </div>-->
+    <!--        </div>-->
+</div> <!-- end of row text-center div-->
+</div><!-- end of container-fluid div-->
 </br>
 </body>
 </html>
