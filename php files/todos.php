@@ -1,22 +1,21 @@
 <?php
-date_default_timezone_set('US/Eastern');
 require_once "init.php";
 include_once "header.php";
 
-$itemsQuery = $db->prepare("
-    SELECT id, name, done
-    FROM items
-    WHERE user= :user");
-
-$itemsQuery->execute([
-    'user'=> $_SESSION['user_id']
-]);
-
-$items = itemsQuery :: rowCount() ? $itemsQuery : [];
-foreach($items as $item){
-    echo $item['name'], '<br>';
-}
-?>
+//$itemsQuery = $db->prepare("
+//    SELECT id, name, done
+//    FROM items
+//    WHERE user= :user");
+//
+//$itemsQuery->execute([
+//    'user'=> $_SESSION['user_id']
+//]);
+//
+//$items = itemsQuery :: rowCount() ? $itemsQuery : [];
+//foreach($items as $item){
+//    echo $item['name'], '<br>';
+//}
+//?>
 <?php
 //welcome scripts
 //HTML can be output inside of PHP tags using echo
@@ -31,6 +30,7 @@ echo "Hello! Today is " . date("Y/m/d") . "<br>";
     <!-- javascript section for calendar functions-->
     <title>Easy Task Management Listls</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">

@@ -2,9 +2,10 @@
 
 session_start();
 
-$_SESSION['user_id']=1;
+$_SESSION['user_id']=1; //todo
 
-$db_server = mysqli_connect($db_hostname, $db_username, $db_password, $db_database);
+include "login_maryann.php";
+
 
 if(!isset($_SESSION['user_id'])){
     die('You are not signed in.');
