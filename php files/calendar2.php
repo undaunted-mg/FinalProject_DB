@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set('US/Eastern');
-include_once "header.php";
+require "header.php";
 ?>
 <div class="container">
     <div class="row">
@@ -49,7 +49,7 @@ include_once "header.php";
                     center:'title',
                     right:'month,agendaWeek,agendaDay'
                 },
-                events: 'load.php',
+                events: 'insert.php',
                 selectable:true,
                 selectHelper:true,
                 select: function(start, end, allDay)
@@ -138,26 +138,26 @@ include_once "header.php";
     <div id="calendar"></div>
 </div>
 </br>
-<div class="container-fluid">
-    <div class="row">
-        <!--div that holds two columns for to-do-list and contact-list-->
-        <div class="col-sm">
-            <div class="list">
-                <h3>To Do List's</h3>
-                <ul class="items">
-                    <li><span class="item">Shopping</span>
-                    </li>
-                    <li><span= class"item done">item done</span>
-                        <a href="#">Mark as done</a>
-                    </li>
-                </ul>
-                <form class "item-add" action="add.php" method="post">
-                <input type="text" name="name" placeholder="Type a new item here" class="input" autocomplete="off" required>
-                <input type="submit" value="Add" class="submit">
-                </form>
-            </div>
-        </div>
-    </div>
+<!--<div class="container-fluid">-->
+<!--    <div class="row">-->
+<!--        <!--div that holds two columns for to-do-list and contact-list-->-->
+<!--        <div class="col-sm">-->
+<!--            <div class="list">-->
+<!--                <h3>To Do List's</h3>-->
+<!--                <ul class="items">-->
+<!--                    <li><span class="item">Shopping</span>-->
+<!--                    </li>-->
+<!--                    <li><span= class"item done">item done</span>-->
+<!--                        <a href="#">Mark as done</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--                <form class "item-add" action="add.php" method="post">-->
+<!--                <input type="text" name="name" placeholder="Type a new item here" class="input" autocomplete="off" required>-->
+<!--                <input type="submit" value="Add" class="submit">-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
     <!--        <div class="col-sm">-->
     <!--            <div id="contact_List">-->
     <!--                <h3>Contact List</h3>-->
@@ -171,4 +171,4 @@ include_once "header.php";
 </div><!-- end of container-fluid div-->
 </br>
 </body>
-</html>
+

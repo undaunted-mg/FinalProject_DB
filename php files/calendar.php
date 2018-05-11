@@ -25,8 +25,7 @@ echo "Hello! Today is " . date("Y/m/d") . "<br>";
     <title>Easy Task Management </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+
     <script>
         <?php
         include "login_maryann.php";
@@ -57,7 +56,7 @@ echo "Hello! Today is " . date("Y/m/d") . "<br>";
                     center:'title',
                     right:'month,agendaWeek,agendaDay'
                 },
-                events: 'load.php',
+                events: 'insert.php',
                 selectable:true,
                 selectHelper:true,
                 select: function(start, end, allDay)
