@@ -29,13 +29,14 @@ if (!$db_server) die("Unable to connect to MySQL: " . mysqli_error($db_server));
     </div>
 <body>
 <div class="container">
-    <h2>Instructions for Calendar Use:</h2>
+    <h2>How to use the Calendar:</h2>
     <div class="row">
 <ul>
     <li>1. Choose your desired view whether it be monthly, weekly, or daily.</li>
     <li>2. Adding an event in monthly view makes it an all day event but you can edit the time later in weekly or daily view.</li>
     <li>3. To edit an event time, go into weekly or daily view, and slide the event to the correct time slot or drag the event box higher or low to add or remove time.</li>
     <li>4. To remove an event or task, simply click on the event and click ok when the prompt asks you to confirm deletion.</li>
+    <li>5. Your events will be saved as long as you keep your session live.</li>
 </ul>
 </div>
     </div>
@@ -44,9 +45,9 @@ if (!$db_server) die("Unable to connect to MySQL: " . mysqli_error($db_server));
     <h2>How to use lists:</h2>
     <div class="row">
 <ul>
-    <li>1.</li>
-    <li>2.</li>
-    <li>3.</li>
+    <li>1.Type in your task.</li>
+    <li>2. When task is completed you can cross it off using the button or you can go ahead and delete it.</li>
+    <li>3. Your list items will be saved as long as you keep your session live.</li>
 </ul>
     </div>
 </div>

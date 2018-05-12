@@ -32,7 +32,7 @@
                             <a class="nav-link" href="calendar.php">My Calendar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="lists.php">Lists</a>
+                            <a class="nav-link" href="todos.php">Lists</a>
                         </li>
                     </ul>
                 </div>

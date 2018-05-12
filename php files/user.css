@@ -2,83 +2,116 @@ html {
   height: 100%;
   width: 100%;
 }
+/*headers and p texts*/
 
-body {
-  background-color: #eceff0;
-  height: 980px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+h1 {
+    margin: 1px;
+    padding: 5px;
+    font-size: 30px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-align: center;
+    color:black ;
+}
+h5 {
+    margin: 1px;
+    padding: 5px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-align: center;
+    color:green ;
+}
+p {
+    margin: 1px;
+    padding: 5px;
+    color: black;
+    text-align: center;
+}
+h3{
+    margin: 1px;
+    padding: 5px;
+    text-align: center;
 }
 
-input{
+/*body Styling*/
+
+head {
+  background-color: #eceff0;
+
+}
+
+body, input{
   font:1em "Open Sans", sans-serif;
   color:#363639;
 }
+/*links styling*/
 
 a{
   text-decoration: none;
   border-bottom: 1px dashed #363639;
 }
 
+/*Lists Styling*/
+
 .list{
-  background-color:#fff;
-  margin:20px auto;
-  width: 100%;
-  max-width:500px;
-  padding: 2px;
-  border-radius: 2px;
-  box-shadow: 3px 3px 0 rbga (0,0,0,.1);
-  box-sizing: border-box;
+    background-color:#fff;
+    margin:20px auto;
+    width: 100%;
+    max-width:500px;
+    padding: 20px;
+    border-radius: 2px;
+    box-shadow: 3px 3px 0 rbga (0,0,0,.1);
+    box-sizing: border-box;
 }
-header {
-  width: 980px;
-  height: 40px;
-  margin: 1px 1px 10px 1px;
-  padding: 1em;
-}
+
+
 .list .header{
   font-family: "Shadows Into Light Two", cursive;
-  margin: 0 0 0 0;
+  margin: 0 0 10px 0;
+}
+
+/*Items Styling*/
+
+
+.items li , .item-add .input{
+    border:0;
+    border-bottom: 1px dashed #ccc;
+    padding: 15px 0;
+}
+.items li:hover .done-button{
+    opacity:1;
 }
 
 .items{
-  margin:0;
-  padding:0;
-  list-style: none;
+    margin:0;
+    padding:0;
+    list-style-type: none;
+}
+.item.done{
+    text-decoration:line-through;
 }
 
-.item li:hover .done-button{
-  opacity:1;
+/*Done Button*/
+.done-button{
+    display: inline-block;
+    font-size:0.8em;
+    background-color: #d9dfel;
+    color:363639;
+    padding:3px 6px;
+    border:0;
+    opacity: 0.4;
 }
-.items .item.done{
-  text-decoration: line-through;
-}
-
-.items li ,
-item-add .input{
-  border:0;
-  border-bottom: 1px dashed #ccc;
-  padding: 15px 0;
-}
-
+/*input*/
 }
 .input{
   width: 100%;
 }
 
-.input:focus{
-  outline:none;
-
-.done-button{
-  display: inline-block;
-  font-size:0.8em;
-  background-color: #d9dfel;
-  color:363639;
-  padding:3px 6px;
-  border:0;
-  opacity: 0.4;
+.input:focus {
+    outline: none;
 }
+
+/*submit styling*/
 
 .submit{
   background-color: #fff;
@@ -87,24 +120,6 @@ item-add .input{
   width: 100%;
   margin-top: 10px;
   box-shadow: 3px 3px #ddd;
-}
-h1 {
-  margin: 1px;
-  padding: 5px;
-  font-size: 20px;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
-  text-align: center;
-    color:blue ;
-}
-p {
-    margin: 1px;
-    padding: 5px;
-    color: green;
-}
-h3{
-  margin: 1px;
-  padding: 5px;
-    text-align: center;
 }
 
 

@@ -1,3 +1,7 @@
+<style type="text/css">
+    <?php include 'user.css'; ?>
+</style>
+
 <?php
 /*if(!isset($_SESSION['userId']))
 {
@@ -15,11 +19,9 @@ include_once "header.php";
 echo '<h1>Welcome to Easy Task Management</h1>';
 //Different kinds of quotation styles can be used, but the closing quote must match the opening quote
 echo "<p>For both your avid schedulers and your hasty procrastinators</br> </p>";
-echo "Hello! Today is " . date("Y/m/d") . "<br>";
+echo "<p>Hello! Today is " . date("Y/m/d") . "<br></p>";
 ?>
-<style>
-    include_once 'user.css';
-</style>
+
 <!-- javascript section for calendar functions-->
 <head>
     <title>Easy Task Management </title>
@@ -139,7 +141,7 @@ echo "Hello! Today is " . date("Y/m/d") . "<br>";
 </head>
 <body>
 <br />
-<h2 align="center"><a href="#">Easy Task Manager</a></h2>
+<h3 align="center"><a href="#">Easy Task Manager</a></h3>
 <br />
 <div class="container">
     <div id="calendar"></div>
