@@ -119,7 +119,7 @@ a{
   border: 1px solid #ddd;
   width: 100%;
   margin-top: 10px;
-  box-shadow: 3px 3px #ddd;
+  box-shadow: 3px 3px 0 #ddd;
 }
 
 

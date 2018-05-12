@@ -12,3 +12,5 @@ if(!isset($_SESSION['user_id'])){
     $itemsQuery= $db->prepare("SELECT id, name, done
 FROM items
 WHERE user= :user");}
+
+?>
